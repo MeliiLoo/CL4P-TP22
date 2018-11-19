@@ -44,7 +44,8 @@ public class ChangeCharacter : MonoBehaviour {
 
             case 2:
 
-                
+
+              
 
                 character1.gameObject.SetActive(false);
                 character2.gameObject.SetActive(true);

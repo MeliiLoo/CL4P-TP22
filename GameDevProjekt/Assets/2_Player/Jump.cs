@@ -2,68 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class Jump : MonoBehaviour
 {
-
-   
     [SerializeField]
     private Animator animator;
 
-    float moveSpeed;
     float jumpSpeed;
     bool isJumping;
 
     Rigidbody2D rb;
 
-
     // Use this for initialization
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        
+
     }
 
-
-
+    // Update is called once per frame
     void Update()
     {
 
-        moveSpeed = gameObject.GetComponent<ChangeCharacter>().moveSpeed;
         jumpSpeed = gameObject.GetComponent<ChangeCharacter>().jumpSpeed;
+        Juump();
 
-        float xEingabe = Input.GetAxis("Horizontal");
-        float yEingabe = Input.GetAxis("Vertical");
-        if (yEingabe < 0)
-        {
-            return;
-        }
-        if (yEingabe > 0)
-        {
-            return;
-        }
+    }
 
-
-        float xNeu = transform.position.x +
-         xEingabe * moveSpeed * Time.deltaTime;
-      
-
-        float yNeu = transform.position.y +
-            yEingabe * jumpSpeed* Time.deltaTime;
-
-        transform.position = new Vector3(xNeu, yNeu, 0);
-
-
-        animator.SetFloat("Moving", Mathf.Abs(xEingabe));
-        Jump();
-
-
-
-
-
-     
-}
-         void Jump()
-        {
+    void Juump()
+    {
         if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
             isJumping = true;
@@ -83,13 +48,5 @@ public class CharacterController : MonoBehaviour
             rb.velocity = Vector2.zero;
 
         }
-
     }
-    }
-
-
-
-
-    
-
-
+}

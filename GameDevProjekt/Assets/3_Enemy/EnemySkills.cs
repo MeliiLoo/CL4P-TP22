@@ -37,11 +37,11 @@ private bool canShoot = true;
 	// automatisches hin und her laufen	
 	newPos = startPos;
 	newPos.x = newPos.x + Mathf.PingPong (Time.time * speed, length) - 3;
-	transform.eulerAngles = new Vector3(0,180,0);
+	// transform.eulerAngles = new Vector3(0,180,0);
 	transform.position = newPos;
 
 	// position holen
-	ls = GameObject.Find("Launcher").transform.position;
+	ls = GameObject.Find("LauncherFire").transform.position;
 	shoot();
 
 	//schiessen

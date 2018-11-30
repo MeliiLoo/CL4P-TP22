@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 1
   Weapon: {fileID: 0}
-  speed: 10
+  speed: 5
   rigi: {fileID: 0}
 --- !u!212 &212046648975056746
 SpriteRenderer:

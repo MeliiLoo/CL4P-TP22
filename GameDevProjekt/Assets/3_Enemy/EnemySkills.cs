@@ -38,7 +38,9 @@ public GameObject dynamicFireball;
 	// automatisches hin und her laufen	
 	newPos = startPos;
 	newPos.x = newPos.x + Mathf.PingPong (Time.time * speed, length) - 3;
+	transform.eulerAngles = new Vector3(0,180,0);
 	transform.position = newPos;
+	shoot();
 
 	//schiessen
 	if(scene.name == "Scene_1"){
@@ -64,8 +66,7 @@ public GameObject dynamicFireball;
 public void shoot(){
 			Instantiate(Weapon,
             ls,
-            Quaternion.identity,
-			dynamicFireball.transform);
+            Quaternion.identity);
 			//Weapon.addForce(100,0);
 }
 

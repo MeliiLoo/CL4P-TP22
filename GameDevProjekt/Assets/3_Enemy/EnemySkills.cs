@@ -20,18 +20,17 @@ private Vector3 newPos;
 private Vector3 ls;
 private Scene scene;
 public GameObject dynamicFireball;
-
-
+private float fireDelay;
+private bool canShoot = true;
 
 	void Start () {
 	// Szene holen
 	Scene scene = SceneManager.GetActiveScene();
 	// Rigidbody
 	rigi = gameObject.AddComponent<Rigidbody2D>();
-	//body = gameObject.AddComponent<GameObject>();
+	fireDelay = 5f;
 	//Position holen
 	startPos = transform.position;	
-	ls = GameObject.Find("Launcher").transform.position;
 	}
 	
 	void Update () {
@@ -40,6 +39,9 @@ public GameObject dynamicFireball;
 	newPos.x = newPos.x + Mathf.PingPong (Time.time * speed, length) - 3;
 	transform.eulerAngles = new Vector3(0,180,0);
 	transform.position = newPos;
+
+	// position holen
+	ls = GameObject.Find("Launcher").transform.position;
 	shoot();
 
 	//schiessen
@@ -64,11 +66,22 @@ public GameObject dynamicFireball;
 }
 
 public void shoot(){
+	if(canShoot){
 			Instantiate(Weapon,
             ls,
             Quaternion.identity);
-			//Weapon.addForce(100,0);
+			canShoot = false;
+			StartCoroutine(Delay());
+	}
 }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(fireDelay);
+        canShoot = true;
+    }
+
+
 
 public void kill(){
 Destroy(rigi,1f);

@@ -4,18 +4,29 @@ using UnityEngine;
 
 public class dynamicFireball : MonoBehaviour {
 
-private Vector3 posi;
+private Vector2 newForce;
+public Vector3 posi;
+public Vector3 tempi;
 private Rigidbody2D firi;
 
 	// Use this for initialization
 	void Start () {
-		firi = gameObject.AddComponent<Rigidbody2D>();
-		posi = transform.position;
+		firi = gameObject.GetComponent<Rigidbody2D>();
+		posi = GameObject.Find("LauncherFire").transform.position;
 	}
-	
+	public
 	// Update is called once per frame
 	void Update () {
-	firi.AddForce(new Vector2(50,0));
+
+		if(posi.x > tempi.x){
+		newForce = new Vector2(-5,0);
+		}
+		else
+		{
+			newForce = new Vector2(5,0);
+		}
+	   	firi.AddForce(newForce, ForceMode2D.Impulse);
 		
+		posi = tempi;
 	}
 }

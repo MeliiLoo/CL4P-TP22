@@ -2732,14 +2732,15 @@ Prefab:
     - target: {fileID: 212046648975056746, guid: 71042620eeea8db42a1c73fb4a1cc730,
         type: 2}
       propertyPath: m_FlipX
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 60643493031939556, guid: 71042620eeea8db42a1c73fb4a1cc730,
         type: 2}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 50754852010585080, guid: 71042620eeea8db42a1c73fb4a1cc730, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 71042620eeea8db42a1c73fb4a1cc730, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &271113770 stripped
@@ -6875,7 +6876,8 @@ Prefab:
       propertyPath: speed
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 50050341354282494, guid: d069972cff32d404b8b40a685d6b59f7, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: d069972cff32d404b8b40a685d6b59f7, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &655775566 stripped
@@ -8332,7 +8334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 848020460}
   m_Layer: 0
-  m_Name: Launcher
+  m_Name: LauncherFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16456,7 +16458,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1683072653}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -18715,7 +18717,8 @@ Prefab:
       propertyPath: length
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 50754852010585080, guid: 71042620eeea8db42a1c73fb4a1cc730, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 71042620eeea8db42a1c73fb4a1cc730, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &1904860880 stripped

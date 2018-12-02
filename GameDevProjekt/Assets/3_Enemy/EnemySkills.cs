@@ -13,44 +13,55 @@ private GameObject Weapon;
 private float speed;
 [SerializeField]
 private int length;
-private Rigidbody2D rigi;
-//private GameObject body;
+private GameObject body;
 private Vector3 startPos;
 private Vector3 newPos;
+private Vector3 tempPos;
+private SpriteRenderer sr;
 private Vector3 ls;
-private Scene scene;
-public GameObject dynamicFireball;
-
-
+//public GameObject dynamicFireball;
+private float fireDelay = 1f;
+private bool canShoot = true;
 
 	void Start () {
-	// Szene holen
-	Scene scene = SceneManager.GetActiveScene();
-	// Rigidbody
-	rigi = gameObject.AddComponent<Rigidbody2D>();
-	//body = gameObject.AddComponent<GameObject>();
+	// GameObject und SpriteRenderer holen
+	body = gameObject.GetComponent<GameObject>();
+	sr = gameObject.GetComponent<SpriteRenderer>();
 	//Position holen
 	startPos = transform.position;	
-	ls = GameObject.Find("Launcher").transform.position;
 	}
 	
 	void Update () {
 	// automatisches hin und her laufen	
 	newPos = startPos;
 	newPos.x = newPos.x + Mathf.PingPong (Time.time * speed, length) - 3;
-	transform.eulerAngles = new Vector3(0,180,0);
-	transform.position = newPos;
-	shoot();
 
-	//schiessen
-	if(scene.name == "Scene_1"){
-		shoot();
+	transform.position = newPos;
+
+	// Flippen von Charakter
+	if (newPos.x > tempPos.x){
+		sr.flipX = false;
 	}
+	else
+	{
+		sr.flipX = true;
+	}
+	tempPos = newPos;
 
 	// Wenn Lebenspunkte aufgebraucht
-	if(1 > Health){
-			kill();
+	if(Health < 1){
+		canShoot = false;
+		Debug.Log("Tod");
+		Destroy(body,1f);
 		}
+
+	// position holen
+	ls = GameObject.Find("LauncherFire").transform.position;
+	if (Weapon){
+	shoot();
+	}
+
+
 }
 
 
@@ -64,15 +75,19 @@ public GameObject dynamicFireball;
 }
 
 public void shoot(){
+	if(canShoot){
 			Instantiate(Weapon,
             ls,
             Quaternion.identity);
-			//Weapon.addForce(100,0);
+			canShoot = false;
+			StartCoroutine(Delay());
+	}
 }
 
-public void kill(){
-Destroy(rigi,1f);
-}
-
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(fireDelay);
+        canShoot = true;
+    }
 
 }

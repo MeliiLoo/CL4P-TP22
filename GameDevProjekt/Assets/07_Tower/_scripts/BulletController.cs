@@ -12,6 +12,6 @@ public class BulletController : MonoBehaviour {
 
 	private void Start() {
 
-	GetComponent<Rigidbody>().AddForce(Vector3.forward*speed, ForceMode.Impulse);  
+	GetComponent<Rigidbody2D>().AddForce(Vector3.forward*speed, ForceMode2D.Impulse);  
 	}
 }

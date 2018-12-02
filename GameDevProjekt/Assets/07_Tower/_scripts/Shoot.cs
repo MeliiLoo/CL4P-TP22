@@ -25,7 +25,7 @@ public class Shoot : MonoBehaviour {
     private bool canShoot = true;
 
 	void Start () {
-        var launcher = GetComponentInChildren<Launcher>();
+        var launcher = GetComponentInChildren<LauncherTower>();
 
 
         //TODO: startPosition für die Bullet aus dem Launcher holen.

@@ -21,7 +21,7 @@ public class Character : ScriptableObject {
         Debug.Log(name + ": " + description);
             }
 
-
+  
 
 
 }

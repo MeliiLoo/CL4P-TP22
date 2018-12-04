@@ -11,7 +11,7 @@ public class ChangeCharacter : MonoBehaviour {
     private Character char1, char2, char3;
 
     public float moveSpeed;
-    public float jumpSpeed;
+    public float jumpForce;
 
     int activeCharacter;
 
@@ -48,7 +48,7 @@ public class ChangeCharacter : MonoBehaviour {
                 character2.gameObject.SetActive(false);
                 character3.gameObject.SetActive(false);
                 moveSpeed = char1.speed;
-                jumpSpeed = char1.jump;
+                jumpForce = char1.jump;
                 break;
 
             case 2:
@@ -60,7 +60,7 @@ public class ChangeCharacter : MonoBehaviour {
                 character2.gameObject.SetActive(true);
                 character3.gameObject.SetActive(false);
                 moveSpeed = char2.speed;
-                jumpSpeed = char2.jump;
+                jumpForce = char2.jump;
                 break;
 
             case 3:
@@ -71,7 +71,7 @@ public class ChangeCharacter : MonoBehaviour {
                 character2.gameObject.SetActive(false);
                 character3.gameObject.SetActive(true);
                 moveSpeed = char3.speed;
-                jumpSpeed = char3.jump;
+                jumpForce = char3.jump;
                 break;
         }
     }

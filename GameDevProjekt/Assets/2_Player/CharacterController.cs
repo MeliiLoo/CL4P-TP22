@@ -10,79 +10,90 @@ public class CharacterController : MonoBehaviour
     private Animator animator;
 
     float moveSpeed;
-    float jumpSpeed;
+    float jumpForce;
     bool isJumping;
 
-    Rigidbody2D rb;
+    public GameObject rbo2, rbo3, rbo4;
 
+    Rigidbody2D rb;
+    Rigidbody2D rb2;
+    Rigidbody2D rb3;
+    Rigidbody2D rb4;
 
     // Use this for initialization
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        
+        rb = rbo2.GetComponent<Rigidbody2D>();
+        rb2 = GetComponent<Rigidbody2D>();
+        rb3 = rbo3.GetComponent<Rigidbody2D>();
+        rb4 = rbo4.GetComponent<Rigidbody2D>();
+
+
     }
 
 
+    void FixedUpdate()
+        {
+            moveSpeed = gameObject.GetComponent<ChangeCharacter>().moveSpeed;
+            jumpForce = gameObject.GetComponent<ChangeCharacter>().jumpForce;
 
-    void Update()
-    {
-
-        moveSpeed = gameObject.GetComponent<ChangeCharacter>().moveSpeed;
-        jumpSpeed = gameObject.GetComponent<ChangeCharacter>().jumpSpeed;
-
-        float xEingabe = Input.GetAxis("Horizontal");
-        float yEingabe = Input.GetAxis("Vertical");
-        if (yEingabe < 0)
+            float xEingabe = Input.GetAxis("Horizontal");
+            float yEingabe = Input.GetAxis("Vertical");
+        if (yEingabe < 0 | yEingabe > 0)
         {
             return;
         }
-        if (yEingabe > 0)
-        {
-            return;
-        }
+      
+
 
 
         float xNeu = transform.position.x +
          xEingabe * moveSpeed * Time.deltaTime;
-      
+
 
         float yNeu = transform.position.y +
-            yEingabe * jumpSpeed* Time.deltaTime;
+            yEingabe * jumpForce * Time.deltaTime;
 
         transform.position = new Vector3(xNeu, yNeu, 0);
 
+       
+        //animator.SetFloat("Speed", Mathf.Abs((move));
 
-        animator.SetFloat("Moving", Mathf.Abs(xEingabe));
         Jump();
+        }
+
+        void Jump()
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+            {
+                isJumping = true;
+
+                //animator.SetBool("IsJumping", true);
+
+                rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+                rb2.AddForce(new Vector2(rb.velocity.x, jumpForce));
+                rb3.AddForce(new Vector2(rb.velocity.x, jumpForce));
+                rb4.AddForce(new Vector2(rb.velocity.x, jumpForce));
+        }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag("Ground"))
+            {
+                isJumping = false;
+
+                //animator.SetBool("IsJumping", false);
+
+                rb.velocity = Vector2.zero;
+            }
+
 
 
 
 
 
      
-}
-         void Jump()
-        {
-        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
-        {
-            isJumping = true;
-            animator.SetBool("IsJumping", true);
-
-            rb.AddForce(new Vector2(rb.velocity.x, jumpSpeed));
-        }
-    }
-    public void OnCollisionEnter2D(Collision2D otherObject)
-    {
-        if (otherObject.gameObject.CompareTag("Ground"))
-        {
-            isJumping = false;
-            animator.SetBool("IsJumping", false);
-
-
-            rb.velocity = Vector2.zero;
-
-        }
 
     }
     }

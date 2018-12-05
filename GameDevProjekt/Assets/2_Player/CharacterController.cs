@@ -71,9 +71,9 @@ public class CharacterController : MonoBehaviour
                 //animator.SetBool("IsJumping", true);
 
                 rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
-                rb2.AddForce(new Vector2(rb.velocity.x, jumpForce));
-                rb3.AddForce(new Vector2(rb.velocity.x, jumpForce));
-                rb4.AddForce(new Vector2(rb.velocity.x, jumpForce));
+                rb2.AddForce(new Vector2(rb2.velocity.x, jumpForce));
+                rb3.AddForce(new Vector2(rb3.velocity.x, jumpForce));
+                rb4.AddForce(new Vector2(rb4.velocity.x, jumpForce));
         }
         }
 
@@ -86,7 +86,10 @@ public class CharacterController : MonoBehaviour
                 //animator.SetBool("IsJumping", false);
 
                 rb.velocity = Vector2.zero;
-            }
+                rb2.velocity = Vector2.zero;
+                rb3.velocity = Vector2.zero;
+                rb4.velocity = Vector2.zero;
+        }
 
 
 

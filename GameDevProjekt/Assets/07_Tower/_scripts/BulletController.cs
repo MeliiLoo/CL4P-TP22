@@ -8,10 +8,18 @@ public class BulletController : MonoBehaviour {
 
 	
 	[SerializeField]
-	private int speed; 
+	private int speed;
+	private Vector2 force;
+	private Rigidbody2D rd;
 
 	private void Start() {
 
-	GetComponent<Rigidbody2D>().AddForce(Vector3.forward*speed, ForceMode2D.Impulse);  
+		rd = GetComponent<Rigidbody2D>();
+		force = new Vector2(-1*speed,0);
+
+	}
+	private void Update(){
+
+	rd.AddForce(force, ForceMode2D.Impulse);  
 	}
 }

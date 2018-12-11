@@ -6,19 +6,23 @@ using UnityEngine;
 
 public class key : MonoBehaviour {
 
-    public int gotKey = 0;
+    public int gotKey;
+
     [SerializeField]
-    private GameObject key1;
+    private GameObject keyObject;
 
-   
 
-        private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.CompareTag("Player"))
+      
+  
+        if (collision.gameObject.CompareTag("Player"))
         {
-            key1.gameObject.SetActive(false);
-            gotKey = 1;
             
+            
+            keyObject.gameObject.SetActive(false);
+            gotKey = 1;
+
 
         }
     }

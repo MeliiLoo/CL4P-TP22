@@ -11,7 +11,7 @@ public class nextLevel : MonoBehaviour {
 
     void Update()
     {
-        key = GameObject.Find("Key").GetComponent<key>().gotKey;
+        key = GameObject.Find("Key1").GetComponent<key>().gotKey;
     }
     private void OnCollisionEnter2D(Collision2D other)
     {

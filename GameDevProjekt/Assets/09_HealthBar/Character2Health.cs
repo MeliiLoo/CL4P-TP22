@@ -41,6 +41,12 @@ public class Character2Health : MonoBehaviour
                     health -= 10;
                     HealthBar();
 
+                    if (health < 0)
+                    {
+
+                        Destroy(gameObject);
+                    }
+
 
 
                 }

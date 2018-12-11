@@ -14,7 +14,7 @@ MonoBehaviour:
   name: BigGuy
   description: Big and Strong but slow
   artwork: {fileID: 21300274, guid: 5675db4a4d8e12347911934eb7b196fd, type: 3}
-  health: 10
+  health: 200
   damage: 8
   speed: 4
   jump: 2200

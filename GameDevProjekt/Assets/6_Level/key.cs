@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class key : MonoBehaviour {
 
-    public bool gotKey;
+    public int gotKey = 0;
     [SerializeField]
     private GameObject key1;
 
@@ -17,7 +17,7 @@ public class key : MonoBehaviour {
         if (other.gameObject.CompareTag("Player"))
         {
             key1.gameObject.SetActive(false);
-            gotKey = true;
+            gotKey = 1;
             
 
         }

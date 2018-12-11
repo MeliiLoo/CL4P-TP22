@@ -11,7 +11,7 @@ public class Character : ScriptableObject {
     public Sprite artwork;
 
     
-    public int health;
+    public float health;
     public int damage;
     public float speed;
     public int jump;

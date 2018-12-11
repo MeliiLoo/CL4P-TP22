@@ -1,22 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class CharacterHealth : MonoBehaviour
+public class Character2Health : MonoBehaviour
 {
+    [SerializeField]
+    private Character character;
 
-    // Use this for initialization
-    void Start()
+    public float health;
+    public float maxHealth;
+
+    public Image healthBar;
+
+
+   void Start()
     {
-
+        maxHealth = character.health;
+        health = maxHealth;
+        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+   
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -33,11 +38,20 @@ public class CharacterHealth : MonoBehaviour
                 }
                 else
                 {
-                    //normaleris lebe abzoge etz nur reload vode scene
-                    Application.LoadLevel(Application.loadedLevel);
+                    health -= 10;
+                    HealthBar();
+
+
+
                 }
             }
         }
+    }
+
+    private void HealthBar() {
+
+        healthBar.fillAmount = health/maxHealth;
+
     }
 }
 

@@ -5,18 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class nextLevel : MonoBehaviour {
 
-    public bool key;
+    public int key;
 
    
 
     void Update()
     {
-        key = gameObject.GetComponent<key>().gotKey;
+        key = GameObject.Find("Key").GetComponent<key>().gotKey;
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
 
-        if (other.gameObject.CompareTag("Player") && key == true){
+        if (other.gameObject.CompareTag("Player") && key > 0){
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
 	}
 }

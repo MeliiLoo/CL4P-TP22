@@ -14,7 +14,7 @@ MonoBehaviour:
   name: MediumGuy
   description: Long and High jumps
   artwork: {fileID: 0}
-  health: 10
+  health: 150
   damage: 8
   speed: 6
   jump: 3200

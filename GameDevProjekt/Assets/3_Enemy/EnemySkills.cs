@@ -56,8 +56,8 @@ private bool canShoot = true;
 		}
 
 	// position holen
-	ls = GameObject.Find("LauncherFire").transform.position;
 	if (Weapon){
+	ls = GameObject.Find("LauncherFire").transform.position;
 	shoot();
 	}
 

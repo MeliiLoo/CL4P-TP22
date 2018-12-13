@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ButtonClick : MonoBehaviour {
 
@@ -20,6 +21,6 @@ public class ButtonClick : MonoBehaviour {
 	}
 
 	void OpenMenu(){
-		Debug.Log("Hallo");
+  	SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
 	}
 }

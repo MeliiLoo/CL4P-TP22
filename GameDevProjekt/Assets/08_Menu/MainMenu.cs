@@ -6,25 +6,32 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
 
-public Button hs;
+public Button BackToGame;
+public Button Play;
+public Button Highscore;
+public Button Quit;
 
     public void Update(){
-        	hs.onClick.AddListener(OpenHighscore);
+        BackToGame.onCllick.AddListener(BackToGame);
+        Play.onCllick.AddListener(PlayGame);
+        Highscore.onCllick.AddListener(OpenHighscore);
+        Quit.onCllick.AddListener(QuitGame);
     }
 
-    public void PlayGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    public void BackToGame(){
+    SceneManager.LoadScene(SceneManager.GetActiveScene());
     }
 
-    public void QuitGame() {
+    public void PlayGame(){
+    SceneManager.LoadScene("Scene_1", LoadSceneMode.Single);
+    }
 
+    public void QuitGame(){
         Application.Quit();
     }
 
     public void OpenHighscore(){
-        Debug.Log("Hallo");
-
+      	    SceneManager.LoadScene("Highscore", LoadSceneMode.Additive);
     }
 
 }

@@ -11,6 +11,7 @@ public class CharacterController : MonoBehaviour
     float moveSpeed;
     float jumpForce;
     public bool isJumping;
+    bool facingRight;
 
     public GameObject rbo2, rbo3, rbo4;
 
@@ -27,6 +28,7 @@ public class CharacterController : MonoBehaviour
         rb3 = rbo3.GetComponent<Rigidbody2D>();
         rb4 = rbo4.GetComponent<Rigidbody2D>();
 
+        facingRight = true;
 
     }
 
@@ -59,6 +61,7 @@ public class CharacterController : MonoBehaviour
         
 
         Jump();
+        Flip();
         }
 
         void Jump()
@@ -88,15 +91,17 @@ public class CharacterController : MonoBehaviour
                 rb2.velocity = Vector2.zero;
                 rb3.velocity = Vector2.zero;
                 rb4.velocity = Vector2.zero;
+        }                                                             
+    }
+    private void Flip() {
+
+        if ((Input.GetKeyDown(KeyCode.LeftArrow) && facingRight) || (Input.GetKeyDown(KeyCode.RightArrow) && !facingRight)) {
+
+            facingRight = !facingRight;
+            transform.Rotate(0f, 180f, 0f);
         }
 
-
-
-
-
-
-     
-
+      
     }
     }
 

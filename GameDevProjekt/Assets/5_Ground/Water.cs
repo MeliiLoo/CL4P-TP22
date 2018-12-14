@@ -8,11 +8,12 @@ public class Water : MonoBehaviour {
     //Players myPlayer;
     public int score;
     public float time;
-    //public GameObject gameOver;
+    public GameObject gameOver;
     
 	void Start () {
   
     }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,7 +21,6 @@ public class Water : MonoBehaviour {
         {
             time = Time.realtimeSinceStartup;
             savePoints();
-
         }
         else { }
     }
@@ -32,9 +32,19 @@ private void savePoints(){
             PlayerPrefs.SetFloat("Time",time);
             }        
             else{}
-            //gameOver.SetActive(true);
-            SceneManager.LoadScene("Menu",LoadSceneMode.Single);
+            gameOver.SetActive(true);
+            StartCoroutine(Warten());
 }
+
+    IEnumerator Warten()
+    {
+        yield return new WaitForSeconds(2);
+        LadeScene();
+    }
+
+    private void LadeScene(){
+        SceneManager.LoadScene("Menu",LoadSceneMode.Single);
+    }
 }
 
 

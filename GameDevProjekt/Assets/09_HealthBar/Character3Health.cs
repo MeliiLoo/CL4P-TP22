@@ -48,7 +48,7 @@ public class Character3Health : MonoBehaviour
         }
     }
 
-    private void HealthBar() {
+    public void HealthBar() {
 
         healthBar.fillAmount = health/maxHealth;
 

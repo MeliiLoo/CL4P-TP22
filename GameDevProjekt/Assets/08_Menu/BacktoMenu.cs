@@ -1,26 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class ButtonClick : MonoBehaviour {
+public class BacktoMenu : MonoBehaviour {
 
-[SerializeField]
-private Button Home;
- 
+	public Button back;
 	// Use this for initialization
 	void Start () {
 		
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	Home.onClick.AddListener(OpenMenu);
+
+		back.onClick.AddListener(BackToMenu);
+		
 	}
 
-	void OpenMenu(){
-  	SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
+	public void BackToMenu(){
+    	    SceneManager.LoadScene("Menu", LoadSceneMode.Single);
 	}
 }

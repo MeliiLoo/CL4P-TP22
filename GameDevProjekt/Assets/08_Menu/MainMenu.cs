@@ -11,15 +11,16 @@ public Button Play;
 public Button Highscore;
 public Button Quit;
 
-    public void Update(){
-        BackToGame.onCllick.AddListener(BackToGame);
-        Play.onCllick.AddListener(PlayGame);
-        Highscore.onCllick.AddListener(OpenHighscore);
-        Quit.onCllick.AddListener(QuitGame);
+    void Update(){
+
+        BackToGame.onClick.AddListener(OpenBackToGame);
+        Play.onClick.AddListener(PlayGame);
+        Highscore.onClick.AddListener(OpenHighscore);
+        Quit.onClick.AddListener(QuitGame);
     }
 
-    public void BackToGame(){
-    SceneManager.LoadScene(SceneManager.GetActiveScene());
+    public void OpenBackToGame(){
+    SceneManager.GetActiveScene();
     }
 
     public void PlayGame(){
@@ -31,7 +32,7 @@ public Button Quit;
     }
 
     public void OpenHighscore(){
-      	    SceneManager.LoadScene("Highscore", LoadSceneMode.Additive);
+      	    SceneManager.LoadScene("Highscore", LoadSceneMode.Single);
     }
 
 }

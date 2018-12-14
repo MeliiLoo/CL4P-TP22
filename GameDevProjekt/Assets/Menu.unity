@@ -141,8 +141,8 @@ RectTransform:
   m_Children:
   - {fileID: 1474142312}
   - {fileID: 1611245586}
-  - {fileID: 743083849}
   - {fileID: 595030042}
+  - {fileID: 743083849}
   m_Father: {fileID: 503765632}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -162,7 +162,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d301cb950b3b9f448a0052471b5a1963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hs: {fileID: 595030043}
+  BackToGame: {fileID: 1474142313}
+  Play: {fileID: 1611245587}
+  Highscore: {fileID: 595030043}
+  Quit: {fileID: 743083850}
 --- !u!1 &70739335
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,7 +644,7 @@ GameObject:
   - component: {fileID: 595030044}
   - component: {fileID: 595030043}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button_Highscore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -659,7 +662,7 @@ RectTransform:
   m_Children:
   - {fileID: 456046226}
   m_Father: {fileID: 26130320}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -704,18 +707,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 595030044}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 26130321}
-        m_MethodName: QuitGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &595030044
@@ -839,7 +831,7 @@ GameObject:
   - component: {fileID: 743083851}
   - component: {fileID: 743083850}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button_Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -857,7 +849,7 @@ RectTransform:
   m_Children:
   - {fileID: 751416827}
   m_Father: {fileID: 26130320}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -902,18 +894,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 743083851}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 26130321}
-        m_MethodName: QuitGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &743083851
@@ -1196,7 +1177,7 @@ GameObject:
   - component: {fileID: 1474142314}
   - component: {fileID: 1474142313}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button_BackToGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1259,18 +1240,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1474142314}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 26130321}
-        m_MethodName: PlayGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1474142314
@@ -1319,7 +1289,7 @@ GameObject:
   - component: {fileID: 1611245588}
   - component: {fileID: 1611245587}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button_PLAY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1382,18 +1352,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1611245588}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 26130321}
-        m_MethodName: PlayGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1611245588

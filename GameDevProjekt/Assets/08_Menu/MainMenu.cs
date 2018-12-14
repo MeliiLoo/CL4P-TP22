@@ -2,8 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
+
+public Button hs;
+
+    public void Update(){
+        	hs.onClick.AddListener(OpenHighscore);
+    }
 
     public void PlayGame()
     {
@@ -14,4 +21,10 @@ public class MainMenu : MonoBehaviour {
 
         Application.Quit();
     }
+
+    public void OpenHighscore(){
+        Debug.Log("Hallo");
+
+    }
+
 }

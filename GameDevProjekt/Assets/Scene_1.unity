@@ -1137,7 +1137,7 @@ Animator:
   m_GameObject: {fileID: 79385405}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5ba073c1bbe42ff4d97bbba020de1a45, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8356,6 +8356,7 @@ GameObject:
   - component: {fileID: 596728103}
   - component: {fileID: 596728107}
   - component: {fileID: 596728102}
+  - component: {fileID: 596728108}
   m_Layer: 8
   m_Name: Player_1
   m_TagString: Player
@@ -8500,6 +8501,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &596728108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596728101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a01cf52559b9241bf1012e3b0d7346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 596728107}
 --- !u!4 &597632983 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4080930575654448, guid: 3ccbe5196be16134ab8159d28d89314a,
@@ -9036,9 +9049,9 @@ GameObject:
   - component: {fileID: 646209115}
   - component: {fileID: 646209116}
   - component: {fileID: 646209117}
-  - component: {fileID: 646209118}
   - component: {fileID: 646209119}
   - component: {fileID: 646209120}
+  - component: {fileID: 646209121}
   m_Layer: 8
   m_Name: Players
   m_TagString: Player
@@ -9093,28 +9106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0d93033a0d6c38469c902a9c36588e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 646209118}
+  isJumping: 0
   rbo2: {fileID: 596728101}
   rbo3: {fileID: 954567625}
   rbo4: {fileID: 79385405}
---- !u!95 &646209118
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 646209114}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5ba073c1bbe42ff4d97bbba020de1a45, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &646209119
 Rigidbody2D:
   serializedVersion: 4
@@ -9150,16 +9145,62 @@ BoxCollider2D:
   m_Offset: {x: 0.16, y: 0.42}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.62, y: 0.8}
   m_EdgeRadius: 0
+--- !u!212 &646209121
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 646209114}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.56, y: 2.56}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &647547975
 Prefab:
   m_ObjectHideFlags: 0
@@ -13217,7 +13258,7 @@ Animator:
   m_GameObject: {fileID: 954567625}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5ba073c1bbe42ff4d97bbba020de1a45, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

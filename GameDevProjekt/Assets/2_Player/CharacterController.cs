@@ -6,12 +6,11 @@ public class CharacterController : MonoBehaviour
 {
 
    
-    [SerializeField]
-    private Animator animator;
+    
 
     float moveSpeed;
     float jumpForce;
-    bool isJumping;
+    public bool isJumping;
 
     public GameObject rbo2, rbo3, rbo4;
 
@@ -57,7 +56,7 @@ public class CharacterController : MonoBehaviour
         transform.position = new Vector3(xNeu, yNeu, 0);
 
        
-        //animator.SetFloat("Speed", Mathf.Abs((move));
+        
 
         Jump();
         }
@@ -68,7 +67,7 @@ public class CharacterController : MonoBehaviour
             {
                 isJumping = true;
 
-                //animator.SetBool("IsJumping", true);
+                
 
                 rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
                 rb2.AddForce(new Vector2(rb2.velocity.x, jumpForce));
@@ -83,7 +82,7 @@ public class CharacterController : MonoBehaviour
             {
                 isJumping = false;
 
-                //animator.SetBool("IsJumping", false);
+                
 
                 rb.velocity = Vector2.zero;
                 rb2.velocity = Vector2.zero;

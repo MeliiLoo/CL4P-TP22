@@ -8,6 +8,8 @@ public class Character1Health : MonoBehaviour
     [SerializeField]
     private Character character;
 
+
+
     public float health;
     public float maxHealth;
 

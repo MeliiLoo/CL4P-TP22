@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class key : MonoBehaviour {
 
     public int gotKey;
+    public GameControl gc;
     public int keyCounter;
     public Text keyText;
 
@@ -31,6 +32,7 @@ public class key : MonoBehaviour {
 
             // für die Anzeige
             keyCounter++;
+            gc.score +=10;
             keyText.text = "Key: " + keyCounter + "/ 3".ToString();
         }
     }

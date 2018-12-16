@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class JumpDeath : MonoBehaviour {
 
+	public GameControl gameCo;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,5 +19,6 @@ public class JumpDeath : MonoBehaviour {
     public void Death()
     {
         Destroy(this.gameObject);
+		gameCo.score++;
     }
 }

@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class EnemySkills : MonoBehaviour {
 
-// [SerializeField]
-// private int Health;
+[SerializeField]
+private int Health;
 [SerializeField]
 private GameObject Weapon;
+[SerializeField]
+private GameObject Weapon1;
 [SerializeField]
 private float speed;
 [SerializeField]
@@ -19,7 +21,8 @@ private Vector3 newPos;
 private Vector3 tempPos;
 private SpriteRenderer sr;
 private Vector3 ls;
-//public GameObject dynamicFireball;
+public Launcher launchiX;
+public Launcher launchiY;
 private float fireDelay = 1f;
 private bool canShoot = true;
 
@@ -49,34 +52,50 @@ private bool canShoot = true;
 	tempPos = newPos;
 
 	// Wenn Lebenspunkte aufgebraucht
-	//if(Health < 1){
-	//	canShoot = false;
-	//	Debug.Log("Tod");
-	//	Destroy(this.gameObject,1f);
-	//	}
+	if(Health < 1){
+	canShoot = false;
+	Debug.Log("Tod");
+	Destroy(this.gameObject,1f);
+	}
 
 	// position holen
 	if (Weapon){
-	ls = GameObject.Find("LauncherFire").transform.position;
-	shoot();
+		if(sr.flipX == false){
+		ls = launchiY.transform.position;
+		shootL();
+		}
+		else{
+		ls = launchiX.transform.position;
+		shootR();
+		}
 	}
 
 
 }
 
 
-    //void OnCollisionEnter2D(Collision2D collision)
+   // void OnCollisionEnter2D(Collision2D collision)
     //{
-      //  if (collision.gameObject.tag == "Player")
-        //{
-          //  if(Health > 0)
-		//	Health-=1;
-        //}
-//}
+     // if (collision.gameObject.tag == "Player")
+    //{
+      //if(Health > 0)
+		//Health-=1;
+    //}
+	//}
 
-public void shoot(){
+public void shootL(){
 	if(canShoot){
 			Instantiate(Weapon,
+            ls,
+            Quaternion.identity);
+			canShoot = false;
+			StartCoroutine(Delay());
+	}
+}
+
+public void shootR(){
+	if(canShoot){
+			Instantiate(Weapon1,
             ls,
             Quaternion.identity);
 			canShoot = false;

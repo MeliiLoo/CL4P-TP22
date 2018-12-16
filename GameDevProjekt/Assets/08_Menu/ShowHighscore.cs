@@ -9,11 +9,11 @@ public Text timeH;
 public Text scoreH;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 
 		// Punkte aus PlayerPrefs holen und an Text übergeben
-			scoreH.text = PlayerPrefs.GetInt("Points",0) + "  Points".ToString();
-            timeH.text = PlayerPrefs.GetFloat("Time",0).ToString();
+			scoreH.text = PlayerPrefs.GetInt("Points") + "  Points".ToString();
+            timeH.text = PlayerPrefs.GetFloat("Time") + "sec".ToString();
 	}
 
 }

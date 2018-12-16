@@ -13,7 +13,8 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        // soll immer Schiessen
+        // if (Input.GetKey(KeyCode.Space))
         {
             FireAllWeapons();
         }

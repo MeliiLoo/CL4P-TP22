@@ -19503,7 +19503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  maxTime: 60
+  maxTime: 200
   currentTime: 0
   scoreText: {fileID: 1645909983}
   timeText: {fileID: 575437917}

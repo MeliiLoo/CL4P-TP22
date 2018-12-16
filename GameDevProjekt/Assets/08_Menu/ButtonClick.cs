@@ -21,6 +21,6 @@ private Button Home;
 	}
 
 	void OpenMenu(){
-  	SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+  	SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
 	}
 }

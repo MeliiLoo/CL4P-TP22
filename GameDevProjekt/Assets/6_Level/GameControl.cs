@@ -12,6 +12,7 @@ public class GameControl : MonoBehaviour {
 	public Text scoreText;
 	public Text timeText;
 	public GameObject gameOver;
+	public GameObject finishText;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +23,7 @@ public class GameControl : MonoBehaviour {
 	void Update () {
 
 		maxTime -= Time.deltaTime;
-		currentTime = Time.deltaTime;
+		currentTime += Time.deltaTime;
 
 		scoreText.text = "Score: " + score.ToString();
 		timeText.text = "Time: " + maxTime.ToString();
@@ -42,11 +43,11 @@ private void timerEnded()
 	savePoints();
  }
 
-private void savePoints(){
+public void savePoints(){
            if (score > PlayerPrefs.GetInt ("Points")){
 
             PlayerPrefs.SetInt("Points",score);
-            PlayerPrefs.SetFloat("Time",maxTime);
+            PlayerPrefs.SetFloat("Time",currentTime);
             }        
             else{}
             StartCoroutine(Warten());
@@ -58,7 +59,7 @@ private void savePoints(){
         LadeScene();
     }
 
-    private void LadeScene(){
+    public void LadeScene(){
         SceneManager.LoadScene("Menu",LoadSceneMode.Single);
     }
 }

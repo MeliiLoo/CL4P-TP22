@@ -17,31 +17,10 @@ public class Water : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            savePoints();
+            gameOver.SetActive(true);
+            gamectrl.savePoints();
         }
         else { }
-    }
-
-private void savePoints(){
-
-           if (gamectrl.score > PlayerPrefs.GetInt ("Points")){
-
-            PlayerPrefs.SetInt("Points",gamectrl.score);
-            PlayerPrefs.SetFloat("Time",gamectrl.currentTime);
-            }        
-            else{}
-            gameOver.SetActive(true);
-            StartCoroutine(Warten());
-}
-
-    IEnumerator Warten()
-    {
-        yield return new WaitForSeconds(2);
-        LadeScene();
-    }
-
-    private void LadeScene(){
-        SceneManager.LoadScene("Menu",LoadSceneMode.Single);
     }
 }
 

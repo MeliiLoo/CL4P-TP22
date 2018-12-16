@@ -13,7 +13,7 @@ public Text scoreH;
 
 		// Punkte aus PlayerPrefs holen und an Text übergeben
 			scoreH.text = PlayerPrefs.GetInt("Points") + "  Points".ToString();
-            timeH.text = PlayerPrefs.GetFloat("Time") + "sec".ToString();
+            timeH.text = PlayerPrefs.GetFloat("Time") + " Sec".ToString();
 	}
 
 }

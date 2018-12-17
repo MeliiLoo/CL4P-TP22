@@ -27,8 +27,7 @@ public class GameControl : MonoBehaviour {
 
 		scoreText.text = "Score: " + score.ToString();
 		timeText.text = "Time: " + maxTime.ToString();
-		currentTime = maxTime - Time.deltaTime;
-		
+				
 		if(maxTime <= 0.0f)
 		{
 			timerEnded();

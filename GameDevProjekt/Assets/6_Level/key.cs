@@ -27,7 +27,8 @@ public class key : MonoBehaviour {
         {
             
             
-            keyObject.gameObject.SetActive(false);
+            //keyObject.gameObject.SetActive(false);
+            Destroy(this.gameObject);
             gotKey = 1;
 
             // für die Anzeige

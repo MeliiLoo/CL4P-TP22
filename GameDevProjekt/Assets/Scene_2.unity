@@ -6653,8 +6653,10 @@ MonoBehaviour:
   score: 0
   maxTime: 200
   currentTime: 0
+  gotKey: 0
   scoreText: {fileID: 1277100059}
   timeText: {fileID: 238891597}
+  keyText: {fileID: 0}
   gameOver: {fileID: 1980478461}
   finishText: {fileID: 241137449}
 --- !u!4 &411754683
@@ -8367,10 +8369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f86b0726de67064dba030d40057ce2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gotKey: 0
-  gc: {fileID: 0}
-  keyCounter: 0
-  keyText: {fileID: 0}
+  gc: {fileID: 411754682}
+  keyText: {fileID: 272528423}
   keyObject: {fileID: 1695055461}
 --- !u!4 &509369764
 Transform:
@@ -24365,10 +24365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f86b0726de67064dba030d40057ce2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gotKey: 0
-  gc: {fileID: 0}
-  keyCounter: 0
-  keyText: {fileID: 0}
+  gc: {fileID: 411754682}
+  keyText: {fileID: 272528423}
   keyObject: {fileID: 1017556164}
 --- !u!4 &1621585123
 Transform:

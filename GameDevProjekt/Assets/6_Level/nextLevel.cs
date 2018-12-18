@@ -13,16 +13,20 @@ public class nextLevel : MonoBehaviour {
 
     void Update()
     {
-        key = GameObject.Find("Key1").GetComponent<key>().gotKey;
+
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player") && key == 3){
+        if (other.gameObject.CompareTag("Player") && gmc.gotKey == 3){
         finish.SetActive(true);
         gmc.savePoints();
 }
-        if (other.gameObject.CompareTag("Player") && key > 0){
+        if (other.gameObject.CompareTag("Player") && gmc.gotKey > 0){
+    		PlayerPrefs.SetInt("tempScore",gmc.score);
+			PlayerPrefs.SetFloat("tempTime",gmc.currentTime); 
+            PlayerPrefs.SetInt("tempKey",gmc.gotKey);
+
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
 	}
 }

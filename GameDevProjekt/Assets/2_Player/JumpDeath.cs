@@ -19,6 +19,6 @@ public class JumpDeath : MonoBehaviour {
     public void Death()
     {
         Destroy(this.gameObject);
-		gameCo.score++;
+		gameCo.score +=2;
     }
 }

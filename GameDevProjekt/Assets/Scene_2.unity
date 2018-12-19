@@ -30098,6 +30098,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 0
+  finish: {fileID: 0}
+  gmc: {fileID: 0}
 --- !u!212 &2085493476
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30151,7 +30153,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2085493473}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 246.6, y: -8.1, z: 0}
+  m_LocalPosition: {x: 246.6, y: -8.52, z: 0}
   m_LocalScale: {x: 2.338, y: 2.338, z: 2.338}
   m_Children:
   - {fileID: 1469335351}

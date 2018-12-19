@@ -14,9 +14,9 @@ public class AddCoin : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D collision){
        
         if (collision.gameObject.CompareTag("Player"))
-        { 
+        {
+		gm.score +=3; 
 		Destroy(this.gameObject);
-		gm.score +=3;
 		}
 }
 }

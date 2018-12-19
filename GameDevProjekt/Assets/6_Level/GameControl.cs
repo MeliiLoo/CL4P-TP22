@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour {
 
-	public int score;
-	public float maxTime;
-	public float currentTime;
-	public int gotKey;
+	public int score = 0;
+	public float maxTime = 0;
+	public float currentTime = 0;
+	public int gotKey = 0;
 	public Text scoreText;
 	public Text timeText;
 	public Text keyText;

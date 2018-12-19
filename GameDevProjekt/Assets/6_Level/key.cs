@@ -20,11 +20,9 @@ public class key : MonoBehaviour {
     {  
         if (collision.gameObject.CompareTag("Player"))
         {  
-            Destroy(this.gameObject);
             gc.gotKey +=1;
             gc.score +=10;
-
-           
+            Destroy(this.gameObject);           
         }
     }
 }

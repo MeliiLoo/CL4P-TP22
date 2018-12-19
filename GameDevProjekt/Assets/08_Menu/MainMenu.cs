@@ -13,7 +13,7 @@ public Button Quit;
 
     void Update(){
 
-        BackToGame.onClick.AddListener(OpenBackToGame);
+        // BackToGame.onClick.AddListener(OpenBackToGame);
         Play.onClick.AddListener(PlayGame);
         Highscore.onClick.AddListener(OpenHighscore);
         Quit.onClick.AddListener(QuitGame);

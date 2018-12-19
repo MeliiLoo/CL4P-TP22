@@ -22,7 +22,7 @@ public class AddBonus : MonoBehaviour {
        
         if (collision.gameObject.CompareTag("Player"))
         {       
-            Heart.gameObject.SetActive(false);
+			Destroy(this.gameObject);
             live = 10;
 			
 			if(play1G.gameObject.activeSelf==true){

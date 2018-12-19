@@ -9,14 +9,22 @@ public class GameControl : MonoBehaviour {
 	public int score;
 	public float maxTime;
 	public float currentTime;
+	public int gotKey;
 	public Text scoreText;
 	public Text timeText;
+	public Text keyText;
 	public GameObject gameOver;
 	public GameObject finishText;
+	
 
 	// Use this for initialization
 	void Start () {
-		
+		if(SceneManager.GetActiveScene().name == "Scene_2"){
+    		score = PlayerPrefs.GetInt("tempScore");
+			currentTime = PlayerPrefs.GetFloat("tempTime"); 
+            gotKey = PlayerPrefs.GetInt("tempKey");
+
+		}
 	}
 	
 	// Update is called once per frame
@@ -27,8 +35,8 @@ public class GameControl : MonoBehaviour {
 
 		scoreText.text = "Score: " + score.ToString();
 		timeText.text = "Time: " + maxTime.ToString();
-		currentTime = maxTime - Time.deltaTime;
-		
+ 		keyText.text = "Key: " + gotKey + "/ 3".ToString();       
+				
 		if(maxTime <= 0.0f)
 		{
 			timerEnded();
@@ -44,7 +52,7 @@ private void timerEnded()
  }
 
 public void savePoints(){
-           if (score > PlayerPrefs.GetInt ("Points")){
+           if (score > PlayerPrefs.GetInt("Points")){
 
             PlayerPrefs.SetInt("Points",score);
             PlayerPrefs.SetFloat("Time",currentTime);
@@ -53,8 +61,7 @@ public void savePoints(){
             StartCoroutine(Warten());
 }
 
-    IEnumerator Warten()
-    {
+    IEnumerator Warten(){
         yield return new WaitForSeconds(2);
         LadeScene();
     }

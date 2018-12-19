@@ -8,6 +8,8 @@ public class Character3Health : MonoBehaviour
     [SerializeField]
     private Character character;
 
+    public bool isDead;
+
     public float health;
     public float maxHealth;
 
@@ -40,6 +42,11 @@ public class Character3Health : MonoBehaviour
                 {
                     health -= 10;
                     HealthBar();
+
+                    if (health < 1)
+                    {
+                        isDead = true;
+                    }
 
 
 

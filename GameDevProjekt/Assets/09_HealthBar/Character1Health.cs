@@ -15,6 +15,8 @@ public class Character1Health : MonoBehaviour
 
     public Image healthBar;
 
+    public ChangeCharacter cc;
+
 
    void Start()
     {
@@ -42,6 +44,11 @@ public class Character1Health : MonoBehaviour
                 {
                     health -= 10;
                     HealthBar();
+
+                    if (health < 1) {
+
+                        cc.isDead1 = true;
+                    }
 
 
 

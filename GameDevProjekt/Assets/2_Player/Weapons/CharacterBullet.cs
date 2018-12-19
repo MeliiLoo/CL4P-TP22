@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterBullet : MonoBehaviour {
+public class CharacterBullet : MonoBehaviour
+{
 
 
     [SerializeField]
@@ -10,24 +11,28 @@ public class CharacterBullet : MonoBehaviour {
     [SerializeField]
     private Rigidbody2D rb;
     [SerializeField]
-    private int damage;
+    private int damage = 10;
     [SerializeField]
     private GameObject bulletImpact;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         rb.velocity = transform.right * speed;
-		
-	}
-	
-	void OnTriggerEnter2D (Collider2D hit) {
 
-        // if (EnemyController != nul) {
+    }
 
-        //    EnemyController.TakeDamage(damage)
-        // }
-        Instantiate(bulletImpact, transform.position, transform.rotation);
+    void OnTriggerEnter2D(Collider2D hit)
+    {
+        EnemySkills enemy = hit.GetComponent<EnemySkills>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+            Destroy(this.gameObject);
 
-        Destroy(gameObject);
-	}
+        }
+
+    }
 }
+    
+

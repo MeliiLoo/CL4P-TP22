@@ -16,8 +16,12 @@ public class ChangeCharacter : MonoBehaviour {
 
     int activeCharacter;
 
-	// Use this for initialization
-	void Start () {
+    public bool isDead1;
+    public bool isDead2 = false;
+    public bool isDead3 = false;
+
+    // Use this for initialization
+    void Start () {
 
         character1.gameObject.SetActive(true);
         character2.gameObject.SetActive(false);
@@ -29,7 +33,7 @@ public class ChangeCharacter : MonoBehaviour {
 
     void Update()
     {
-
+        
 
         if (Input.GetKeyDown("1") && activeCharacter <3)
         {
@@ -39,44 +43,98 @@ public class ChangeCharacter : MonoBehaviour {
             activeCharacter = 1;
         }
 
+        
+
         switch (activeCharacter)
         {
             case 1:
 
+                
+
+                if (!isDead1)
+                {
+                    character1.gameObject.SetActive(true);
+                    character2.gameObject.SetActive(false);
+                    character3.gameObject.SetActive(false);
+                    moveSpeed = char1.speed;
+                    jumpForce = char1.jump;
+                    health = char1.health;
+
+                    break;
+
+                }
+
+                else if (isDead1)
+                {
+                    character1.gameObject.SetActive(false);
+                    character2.gameObject.SetActive(false);
+                    character3.gameObject.SetActive(false);
+
+                    activeCharacter = 2;
+
+                    break;
+                }
+
+                    break;
+                
 
                 
-                character1.gameObject.SetActive(true);
-                character2.gameObject.SetActive(false);
-                character3.gameObject.SetActive(false);
-                moveSpeed = char1.speed;
-                jumpForce = char1.jump;
-                health = char1.health;
-                
-                break;
 
             case 2:
 
+                if (!isDead2)
+                {
+                    character1.gameObject.SetActive(false);
+                    character2.gameObject.SetActive(true);
+                    character3.gameObject.SetActive(false);
+                    moveSpeed = char2.speed;
+                    jumpForce = char2.jump;
+                    health = char2.health;
 
-              
+                }
 
-                character1.gameObject.SetActive(false);
-                character2.gameObject.SetActive(true);
-                character3.gameObject.SetActive(false);
-                moveSpeed = char2.speed;
-                jumpForce = char2.jump;
-                health = char2.health;
+                else if (isDead2)
+                {
+                    character1.gameObject.SetActive(false);
+                    character2.gameObject.SetActive(false);
+                    character3.gameObject.SetActive(false);
+
+                    activeCharacter = 3;
+
+                    break;
+                }
+
                 break;
 
-            case 3:
 
 
+                case 3:
 
-                character1.gameObject.SetActive(false);
-                character2.gameObject.SetActive(false);
-                character3.gameObject.SetActive(true);
-                moveSpeed = char3.speed;
-                jumpForce = char3.jump;
-                health = char3.health;
+
+                if (!isDead3)
+                {
+                    character1.gameObject.SetActive(false);
+                    character2.gameObject.SetActive(false);
+                    character3.gameObject.SetActive(true);
+                    moveSpeed = char3.speed;
+                    jumpForce = char3.jump;
+                    health = char3.health;
+
+                    break;
+
+                }
+
+                else if (isDead3)
+                {
+                    character1.gameObject.SetActive(false);
+                    character2.gameObject.SetActive(false);
+                    character3.gameObject.SetActive(false);
+
+                    activeCharacter = 1;
+
+                    break;
+                }
+
                 break;
         }
     }

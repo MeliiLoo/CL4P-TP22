@@ -51,12 +51,7 @@ private bool canShoot = true;
 	}
 	tempPos = newPos;
 
-	// Wenn Lebenspunkte aufgebraucht
-	if(Health < 1){
-	canShoot = false;
-	Debug.Log("Tod");
-	Destroy(this.gameObject,1f);
-	}
+
 
 	// position holen
 	if (Weapon){
@@ -108,5 +103,12 @@ public void shootR(){
         yield return new WaitForSeconds(fireDelay);
         canShoot = true;
     }
+
+    public void TakeDamage(int damage) {
+
+        Health -= damage; 
+    }
+
+
 
 }

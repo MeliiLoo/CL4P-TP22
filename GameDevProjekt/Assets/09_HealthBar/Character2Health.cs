@@ -7,6 +7,9 @@ public class Character2Health : MonoBehaviour
 {
     [SerializeField]
     private Character character;
+    
+
+    public bool isDead;
 
     public float health;
     public float maxHealth;
@@ -41,10 +44,10 @@ public class Character2Health : MonoBehaviour
                     health -= 10;
                     HealthBar();
 
-                    if (health < 0)
+                    if (health < 1)
                     {
-
-                        Destroy(gameObject);
+                        isDead = true;
+                        
                     }
 
 

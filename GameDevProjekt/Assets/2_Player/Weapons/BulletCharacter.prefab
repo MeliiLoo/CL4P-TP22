@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50941635968919020}
   - component: {fileID: 58010267605205066}
   - component: {fileID: 114164582164022402}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BulletCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1730837772810656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.435008, y: -5.3430443, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -91,9 +91,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rb: {fileID: 50941635968919020}
-  damage: 0
-  bulletImpact: {fileID: 1619204303792078, guid: 70323da5d2bf7974984bc30029849a5e,
-    type: 2}
+  damage: 10
+  bulletImpact: {fileID: 0}
 --- !u!212 &212248209970311822
 SpriteRenderer:
   m_ObjectHideFlags: 1

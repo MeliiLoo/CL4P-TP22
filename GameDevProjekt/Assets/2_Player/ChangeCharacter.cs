@@ -9,6 +9,7 @@ public class ChangeCharacter : MonoBehaviour {
     private GameObject character1, character2, character3;
     [SerializeField]
     private Character char1, char2, char3;
+    public AudioClip ChangeCharacterSound; 
 
     public float moveSpeed;
     public float jumpForce;
@@ -37,10 +38,13 @@ public class ChangeCharacter : MonoBehaviour {
 
         if (Input.GetKeyDown("1") && activeCharacter <3)
         {
+            SoundManager.instance.RandomizeSfx(ChangeCharacterSound);
             activeCharacter++;
         }
         else if(Input.GetKeyDown("1") && activeCharacter >2) {
+
             activeCharacter = 1;
+            SoundManager.instance.RandomizeSfx(ChangeCharacterSound);
         }
 
         

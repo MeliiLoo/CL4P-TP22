@@ -4048,6 +4048,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCo: {fileID: 1372833146}
+  JumpDeathSound1: {fileID: 8300000, guid: 54e9c0c4c9e5f3b47aaaa1a1d3f24bd5, type: 3}
+  JumpDeathSound2: {fileID: 8300000, guid: fb8ae3bcebb8e6e48a5a39fd3ca8020f, type: 3}
 --- !u!61 &88929472
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4394,6 +4396,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCo: {fileID: 1372833146}
+  JumpDeathSound1: {fileID: 8300000, guid: 54e9c0c4c9e5f3b47aaaa1a1d3f24bd5, type: 3}
+  JumpDeathSound2: {fileID: 8300000, guid: fb8ae3bcebb8e6e48a5a39fd3ca8020f, type: 3}
 --- !u!114 &94955002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16639,6 +16643,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCo: {fileID: 1372833146}
+  JumpDeathSound1: {fileID: 8300000, guid: fb8ae3bcebb8e6e48a5a39fd3ca8020f, type: 3}
+  JumpDeathSound2: {fileID: 8300000, guid: 54e9c0c4c9e5f3b47aaaa1a1d3f24bd5, type: 3}
 --- !u!114 &429776496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18444,6 +18450,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCo: {fileID: 1372833146}
+  JumpDeathSound1: {fileID: 8300000, guid: 54e9c0c4c9e5f3b47aaaa1a1d3f24bd5, type: 3}
+  JumpDeathSound2: {fileID: 8300000, guid: fb8ae3bcebb8e6e48a5a39fd3ca8020f, type: 3}
 --- !u!61 &479454666
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24467,6 +24475,8 @@ MonoBehaviour:
   char1: {fileID: 11400000, guid: 46f24e82ed179094c8dd440bff5760f0, type: 2}
   char2: {fileID: 11400000, guid: 8f252c2256e82fc4d8ec83c88cde76c3, type: 2}
   char3: {fileID: 11400000, guid: 3013bd24e4088924681680873957b50e, type: 2}
+  ChangeCharacterSound: {fileID: 8300000, guid: 93e808610112b7a44952c040661ac3f5,
+    type: 3}
   moveSpeed: 0
   jumpForce: 0
   health: 0
@@ -24489,6 +24499,8 @@ MonoBehaviour:
   rbo2: {fileID: 596728101}
   rbo3: {fileID: 954567625}
   rbo4: {fileID: 79385405}
+  JumpSound1: {fileID: 8300000, guid: 8104283af7aea2f48bc1c1425016ddfc, type: 3}
+  JumpSound2: {fileID: 8300000, guid: f038bbbee67636d4bb46f8ebfd0ed93a, type: 3}
 --- !u!50 &646209119
 Rigidbody2D:
   serializedVersion: 4
@@ -34166,6 +34178,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCo: {fileID: 1372833146}
+  JumpDeathSound1: {fileID: 8300000, guid: fb8ae3bcebb8e6e48a5a39fd3ca8020f, type: 3}
+  JumpDeathSound2: {fileID: 8300000, guid: 54e9c0c4c9e5f3b47aaaa1a1d3f24bd5, type: 3}
 --- !u!1001 &892972558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37277,6 +37291,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCo: {fileID: 1372833146}
+  JumpDeathSound1: {fileID: 8300000, guid: fb8ae3bcebb8e6e48a5a39fd3ca8020f, type: 3}
+  JumpDeathSound2: {fileID: 8300000, guid: 54e9c0c4c9e5f3b47aaaa1a1d3f24bd5, type: 3}
 --- !u!61 &980819540
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52118,6 +52134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCo: {fileID: 1372833146}
+  JumpDeathSound1: {fileID: 8300000, guid: 54e9c0c4c9e5f3b47aaaa1a1d3f24bd5, type: 3}
+  JumpDeathSound2: {fileID: 8300000, guid: fb8ae3bcebb8e6e48a5a39fd3ca8020f, type: 3}
 --- !u!61 &1397997933
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -53882,7 +53900,7 @@ GameObject:
   - component: {fileID: 1441341511}
   - component: {fileID: 1441341510}
   m_Layer: 0
-  m_Name: SoundController
+  m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53914,8 +53932,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5881a66b30d09584a9d0e894dbadc2bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  efxSource: {fileID: 0}
-  musicSource: {fileID: 0}
+  efxSource: {fileID: 1441341512}
+  musicSource: {fileID: 1441341511}
   lowPitchRange: 0.95
   highPitchRange: 1.05
 --- !u!82 &1441341511
@@ -78781,7 +78799,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 22.00003, y: -120}
+  m_AnchoredPosition: {x: 22, y: -120}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2139467139

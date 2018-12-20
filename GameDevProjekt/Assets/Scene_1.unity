@@ -3585,6 +3585,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 0
   healthBar: {fileID: 349003883}
+  cc: {fileID: 646209116}
 --- !u!61 &79385409
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11367,7 +11368,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: GAME OVER
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -20264,11 +20265,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.01
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -20292,7 +20293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -15.9, y: -1.8720002, z: -9.986328}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 822244417}
@@ -22615,7 +22616,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 0
   healthBar: {fileID: 653424680}
-  cc: {fileID: 0}
+  cc: {fileID: 646209116}
 --- !u!61 &596728103
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24473,6 +24474,8 @@ MonoBehaviour:
   isDead1: 0
   isDead2: 0
   isDead3: 0
+  gamectrl: {fileID: 1372833146}
+  gameOver: {fileID: 792762255}
 --- !u!114 &646209117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36688,6 +36691,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 0
   healthBar: {fileID: 586475641}
+  cc: {fileID: 646209116}
 --- !u!61 &954567629
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -45761,7 +45765,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: You made it!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -65487,7 +65491,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 596728106}
+  m_Follow: {fileID: 646209115}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 12
@@ -65513,7 +65517,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770304898}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.775193, y: -0.6719365, z: -10}
+  m_LocalPosition: {x: -15.9, y: -1.8720002, z: -9.986328}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 404903263}

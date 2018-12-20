@@ -20,6 +20,11 @@ public class ChangeCharacter : MonoBehaviour {
     public bool isDead2 = false;
     public bool isDead3 = false;
 
+    [SerializeField]
+    private GameControl gamectrl;
+    [SerializeField]
+    private GameObject gameOver;
+
     // Use this for initialization
     void Start () {
 
@@ -136,6 +141,11 @@ public class ChangeCharacter : MonoBehaviour {
                 }
 
                 break;
+        }
+
+        if (isDead1 && isDead2 && isDead3) {
+            gameOver.SetActive(true);
+            gamectrl.savePoints();
         }
     }
 	

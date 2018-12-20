@@ -16,8 +16,10 @@ public class Character2Health : MonoBehaviour
 
     public Image healthBar;
 
+    public ChangeCharacter cc;
 
-   void Start()
+
+    void Start()
     {
         maxHealth = character.health;
         health = maxHealth;
@@ -46,8 +48,8 @@ public class Character2Health : MonoBehaviour
 
                     if (health < 1)
                     {
-                        isDead = true;
-                        
+                        cc.isDead2 = true;
+
                     }
 
 

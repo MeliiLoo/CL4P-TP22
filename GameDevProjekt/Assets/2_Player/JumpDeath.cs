@@ -5,6 +5,7 @@ using UnityEngine;
 public class JumpDeath : MonoBehaviour {
 
 	public GameControl gameCo;
+    public AudioClip JumpDeathSound1, JumpDeathSound2; 
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,7 @@ public class JumpDeath : MonoBehaviour {
 
     public void Death()
     {
+        SoundManager.instance.RandomizeSfx(JumpDeathSound1, JumpDeathSound2);
         Destroy(this.gameObject);
 		gameCo.score +=2;
     }

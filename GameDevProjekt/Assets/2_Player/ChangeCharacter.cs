@@ -40,11 +40,11 @@ public class ChangeCharacter : MonoBehaviour {
     {
         
 
-        if (Input.GetKeyDown("1") && activeCharacter <3)
+        if ((Input.GetKeyDown("1") || Input.GetMouseButtonDown(0)) && activeCharacter <3)
         {
             activeCharacter++;
         }
-        else if(Input.GetKeyDown("1") && activeCharacter >2) {
+        else if((Input.GetKeyDown("1") || Input.GetMouseButtonDown(0)) && activeCharacter >2) {
             activeCharacter = 1;
         }
 

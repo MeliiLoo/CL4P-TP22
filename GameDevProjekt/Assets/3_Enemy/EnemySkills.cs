@@ -5,78 +5,85 @@ using UnityEngine.SceneManagement;
 
 public class EnemySkills : MonoBehaviour {
 
-[SerializeField]
-private int Health;
-[SerializeField]
-private GameObject Weapon;
-[SerializeField]
-private GameObject Weapon1;
-[SerializeField]
-private float speed;
-[SerializeField]
-private int length;
-// private GameObject body;
-private Vector3 startPos;
-private Vector3 newPos;
-private Vector3 tempPos;
-private SpriteRenderer sr;
-private Vector3 ls;
-public Launcher launchiX;
-public Launcher launchiY;
-private float fireDelay = 1f;
-private bool canShoot = true;
+    [SerializeField]
+    private int Health;
+    [SerializeField]
+    private GameObject Weapon;
+    [SerializeField]
+    private GameObject Weapon1;
+    [SerializeField]
+    private float speed;
+    [SerializeField]
+    private int length;
+    [SerializeField]
+    private GameControl gameCo;
 
-	void Start () {
-	// GameObject und SpriteRenderer holen
-	// body = gameObject.GetComponent<GameObject>();
-	sr = gameObject.GetComponent<SpriteRenderer>();
-	//Position holen
-	startPos = transform.position;	
-	}
-	
-	void Update () {
-	// automatisches hin und her laufen	
-	newPos = startPos;
-	newPos.x = newPos.x + Mathf.PingPong (Time.time * speed, length) - 3;
+    // private GameObject body;
+    private Vector3 startPos;
+    private Vector3 newPos;
+    private Vector3 tempPos;
+    private SpriteRenderer sr;
+    private Vector3 ls;
+    public Launcher launchiX;
+    public Launcher launchiY;
+    private float fireDelay = 1f;
+    private bool canShoot = true;
 
-	transform.position = newPos;
+    void Start() {
+        // GameObject und SpriteRenderer holen
+        // body = gameObject.GetComponent<GameObject>();
+        sr = gameObject.GetComponent<SpriteRenderer>();
+        //Position holen
+        startPos = transform.position;
+    }
 
-	// Flippen von Charakter
-	if (newPos.x > tempPos.x){
-		sr.flipX = false;
-	}
-	else
-	{
-		sr.flipX = true;
-	}
-	tempPos = newPos;
+    void Update() {
+        // automatisches hin und her laufen	
+        newPos = startPos;
+        newPos.x = newPos.x + Mathf.PingPong(Time.time * speed, length) - 3;
 
+        transform.position = newPos;
 
-
-	// position holen
-	if (Weapon){
-		if(sr.flipX == false){
-		ls = launchiY.transform.position;
-		shootL();
-		}
-		else{
-		ls = launchiX.transform.position;
-		shootR();
-		}
-	}
+        // Flippen von Charakter
+        if (newPos.x > tempPos.x) {
+            sr.flipX = false;
+        }
+        else
+        {
+            sr.flipX = true;
+        }
+        tempPos = newPos;
 
 
-}
+
+        // position holen
+        if (Weapon) {
+            if (sr.flipX == false) {
+                ls = launchiY.transform.position;
+                shootL();
+            }
+            else {
+                ls = launchiX.transform.position;
+                shootR();
+            }
+        }
+
+        //Sterben
+        if (Health < 1)
+        {
+                Destroy(this.gameObject);
+                gameCo.score += 2;
+          
+        }
 
 
-   // void OnCollisionEnter2D(Collision2D collision)
-    //{
-     // if (collision.gameObject.tag == "Player")
-    //{
-      //if(Health > 0)
-		//Health-=1;
-    //}
-	//}
+    }
+
+
+   
+  
+		
+   
 
 public void shootL(){
 	if(canShoot){

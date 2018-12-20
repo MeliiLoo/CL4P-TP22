@@ -9,6 +9,8 @@ public class Character3Health : MonoBehaviour
     private Character character;
 
     public bool isDead;
+    public AudioClip Player1GetHit5;
+    public AudioClip Player1GetHit6;
 
     public float health;
     public float maxHealth;
@@ -43,6 +45,7 @@ public class Character3Health : MonoBehaviour
                 else
                 {
                     health -= 10;
+                    SoundManager.instance.RandomizeSfx(Player1GetHit5, Player1GetHit6);
                     HealthBar();
 
                     if (health < 1)

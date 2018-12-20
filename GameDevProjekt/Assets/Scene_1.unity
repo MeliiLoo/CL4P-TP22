@@ -3582,6 +3582,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 3013bd24e4088924681680873957b50e, type: 2}
   isDead: 0
+  Player1GetHit5: {fileID: 8300000, guid: 63fcaeb8e49614049bdc66ff91a1bea2, type: 3}
+  Player1GetHit6: {fileID: 8300000, guid: fd2e66a7c7ff5be4a9a539ef60554ca0, type: 3}
   health: 0
   maxHealth: 0
   healthBar: {fileID: 349003883}
@@ -22621,6 +22623,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 46f24e82ed179094c8dd440bff5760f0, type: 2}
+  Player1GetHit1: {fileID: 8300000, guid: 63fcaeb8e49614049bdc66ff91a1bea2, type: 3}
+  Player1GetHit2: {fileID: 8300000, guid: fd2e66a7c7ff5be4a9a539ef60554ca0, type: 3}
   health: 0
   maxHealth: 0
   healthBar: {fileID: 653424680}
@@ -24478,6 +24482,8 @@ MonoBehaviour:
   char3: {fileID: 11400000, guid: 3013bd24e4088924681680873957b50e, type: 2}
   ChangeCharacterSound: {fileID: 8300000, guid: 93e808610112b7a44952c040661ac3f5,
     type: 3}
+  CharacterDieSound: {fileID: 8300000, guid: 61f97b39420bf4e4a88b37cee9fb3339, type: 3}
+  GameOverSound: {fileID: 8300000, guid: b5e9bdd3eb0f347408eb081db5a31112, type: 3}
   moveSpeed: 0
   jumpForce: 0
   health: 0
@@ -36701,6 +36707,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 8f252c2256e82fc4d8ec83c88cde76c3, type: 2}
+  Player1GetHit3: {fileID: 8300000, guid: 63fcaeb8e49614049bdc66ff91a1bea2, type: 3}
+  Player1GetHit4: {fileID: 8300000, guid: fd2e66a7c7ff5be4a9a539ef60554ca0, type: 3}
   isDead: 0
   health: 0
   maxHealth: 0
@@ -53952,7 +53960,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 17d56b8feca4f5b4b922c423b0ddda74, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.43
   m_Pitch: 1
   Loop: 1
   Mute: 0

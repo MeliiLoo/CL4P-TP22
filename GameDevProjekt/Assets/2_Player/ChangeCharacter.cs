@@ -9,6 +9,7 @@ public class ChangeCharacter : MonoBehaviour {
     private GameObject character1, character2, character3;
     [SerializeField]
     private Character char1, char2, char3;
+    public AudioClip ChangeCharacterSound; 
 
     public float moveSpeed;
     public float jumpForce;
@@ -19,6 +20,11 @@ public class ChangeCharacter : MonoBehaviour {
     public bool isDead1;
     public bool isDead2 = false;
     public bool isDead3 = false;
+
+    [SerializeField]
+    private GameControl gamectrl;
+    [SerializeField]
+    private GameObject gameOver;
 
     // Use this for initialization
     void Start () {
@@ -37,10 +43,13 @@ public class ChangeCharacter : MonoBehaviour {
 
         if (Input.GetKeyDown("1") && activeCharacter <3)
         {
+            SoundManager.instance.RandomizeSfx(ChangeCharacterSound);
             activeCharacter++;
         }
         else if(Input.GetKeyDown("1") && activeCharacter >2) {
+
             activeCharacter = 1;
+            SoundManager.instance.RandomizeSfx(ChangeCharacterSound);
         }
 
         
@@ -136,6 +145,11 @@ public class ChangeCharacter : MonoBehaviour {
                 }
 
                 break;
+        }
+
+        if (isDead1 && isDead2 && isDead3) {
+            gameOver.SetActive(true);
+            gamectrl.savePoints();
         }
     }
 	

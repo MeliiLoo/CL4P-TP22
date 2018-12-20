@@ -43,13 +43,17 @@ public class ChangeCharacter : MonoBehaviour {
     {
         
 
-        if (Input.GetKeyDown("1") && activeCharacter <3)
+        if ((Input.GetKeyDown("1") || Input.GetMouseButtonDown(0)) && activeCharacter <3)
         {
             SoundManager.instance.RandomizeSfx(ChangeCharacterSound);
             activeCharacter++;
         }
+<<<<<<< HEAD
+        else if((Input.GetKeyDown("1") || Input.GetMouseButtonDown(0)) && activeCharacter >2) {
+=======
         else if(Input.GetKeyDown("1") && activeCharacter >2) {
 
+>>>>>>> 7a26d09421db7948979a7e458092c9f178b29937
             activeCharacter = 1;
             SoundManager.instance.RandomizeSfx(ChangeCharacterSound);
         }
